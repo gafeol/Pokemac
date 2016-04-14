@@ -1,22 +1,21 @@
 package Jogo;
 
 public class Treinador {
-	Pokemon p1;
-	Pokemon p2;
-	Pokemon p3;
-	Pokemon p4;
-	Pokemon p5;
-	Pokemon p6;
+	private Pokemon[] p = new Pokemon[10];
 	String nome;
 	
-	public Treinador ( String nome, Pokemon p1, Pokemon p2, Pokemon p3, Pokemon p4, Pokemon p5, Pokemon p6){
+	public Treinador ( String nome, Pokemon[] p, int npoke){
 		this.nome = nome;
-		this.p1 = p1 ;
-		this.p2 = p2 ;
-		this.p3 = p3 ;
-		this.p4 = p4 ;
-		this.p5 = p5 ;
-		this.p6 = p6 ;
-		
+		for(int a=0;a<npoke;a++){
+			this.p[a] = p[a];
+		}
+	}
+	public static void main (String[] args){
+		Pokemon[] v = new Pokemon[10];
+		Ataque splash = new Ataque("splash", 10, 2);
+		v[0] = Pokemon("bla", 12, "agua", splash, splash, splash, splash);
+		v[1] = Pokemon("bla3", 12, "agua", splash, splash, splash, splash);
+		v[2] = Pokemon("bla2", 12, "agua", splash, splash, splash, splash);
+		Treinador garca = new Treinador("garcia", v, 3);
 	}
 }
