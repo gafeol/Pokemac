@@ -1,8 +1,9 @@
+
 package Jogo;
 
 public class Treinador {
 	public Pokemon[] p = new Pokemon[10];
-	String nome;
+	public String nome;
 	
 	public Treinador ( String nome, Pokemon[] p, int npoke){
 		this.nome = nome;
