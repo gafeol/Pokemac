@@ -20,7 +20,13 @@ public class Main{
 
 		Evento troca1 = new Trocar(ash, 3);
 		Evento troca2 = new Trocar(gary, 2);
+		//Arrumar EventSet
+		//Testar Fugir
+		//Testar Item
 		((Trocar)troca1).executar();
 		((Trocar)troca2).executar();
+		Evento ataque1 = new Atacar(ash, gary, p1.a1);
+		((Atacar)ataque1).executar();
+
 	}	
 }

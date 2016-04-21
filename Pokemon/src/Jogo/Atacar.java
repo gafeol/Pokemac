@@ -1,23 +1,24 @@
 package Jogo;
 
 public class Atacar extends Evento {
-	
-	public Atacar ( ){
-		this.nome = nome;
-		this.dano = dano;
-		this.prioridade = prioridade + 3;
+	Ataque a;
+
+	public Atacar (Treinador t, Treinador t2, Ataque a){
+		ator = t;
+		alvo = t2;
+		this.a = a;
 	}
 	
-	public void executa(Treinador t1, Treinador t2){
-		System.out.println("O pokemon "+t1.p[0].nome+" usou "+nome);
-		if((t1.p[0].tipo == "Fogo" && t1.p[0].tipo == "Grama") || (t1.p[0].tipo == "Agua" && t1.p[0].tipo == "Fogo") || (t1.p[0].tipo == "Grama" && t1.p[0].tipo == "Agua")){
+	public void executar(){
+		System.out.println("O pokemon "+ator.p[0].nome+" usou "+a.nome);
+		if((ator.p[0].tipo == "Fogo" && ator.p[0].tipo == "Grama") || (ator.p[0].tipo == "Agua" && ator.p[0].tipo == "Fogo") || (ator.p[0].tipo == "Grama" && ator.p[0].tipo == "Agua")){
 			System.out.println("e foi Super Efetivo!");
-			dano *= 2;
+			a.dano *= 2;
 		}
-		else if(!(t1.p[0].tipo == "Fogo" && t1.p[0].tipo == "Grama") || !(t1.p[0].tipo == "Agua" && t1.p[0].tipo == "Fogo") || !(t1.p[0].tipo == "Grama" && t1.p[0].tipo == "Agua")){
+		else if(!(ator.p[0].tipo == "Fogo" && ator.p[0].tipo == "Grama") || !(ator.p[0].tipo == "Agua" && ator.p[0].tipo == "Fogo") || !(ator.p[0].tipo == "Grama" && ator.p[0].tipo == "Agua")){
 			System.out.println("e foi Pouco Efetivo...");
-			dano /= 2;
+			a.dano /= 2;
 		}
-		t2.p[0].hp -= dano;
+		ator.p[0].hp -= a.dano;
 	}
 }
