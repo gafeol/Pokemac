@@ -1,11 +1,8 @@
 package Jogo;
 
-public class Ataque extends Evento {
-	String nome;
-	int dano;
-	int prioridade;
+public class Atacar extends Evento {
 	
-	public Ataque ( String nome, int dano, int prioridade ){
+	public Atacar ( ){
 		this.nome = nome;
 		this.dano = dano;
 		this.prioridade = prioridade + 3;

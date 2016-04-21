@@ -1,7 +1,8 @@
 package Jogo;
 
 abstract public class Evento {
-	private int prioridade;
-	private Treinador ator;
-		
+	public int prioridade;
+	public Treinador ator;
+	public Treinador alvo;
+	public String acao;
 }
