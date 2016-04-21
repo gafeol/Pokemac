@@ -1,7 +1,7 @@
 package Jogo;
 
 public class Pokemon {
-	String nome;
+	public String nome;
 	int hp;
 	int hpMax;
 	String tipo;
