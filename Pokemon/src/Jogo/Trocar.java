@@ -2,8 +2,9 @@ package Jogo;
 
 class Trocar extends Evento{
 	public int indice_pok;
-	public Trocar (Treinador t, int ind){
+	public Trocar (Treinador t, Treinador t2, int ind){
 		ator = t;
+		alvo = t2;
 		indice_pok = ind;
 		prioridade = 1;
 	}

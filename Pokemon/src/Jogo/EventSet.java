@@ -28,9 +28,12 @@ class EventSet {
 		}
 	}
 	
-	static public void executa_rodada (Evento e1, Evento e2, Treinador a, Treinador b){
+	static public void executa_rodada (Evento e1, Evento e2 ){
 		add(e1);
 		add(e2);
+		System.out.println();
+		System.out.println( e1.ator.p[0].nome + "    HP: "+e1.ator.p[0].hp);
+		System.out.println( e2.ator.p[0].nome + "    HP: "+e2.ator.p[0].hp);
 		ordenaEvento();
 		
 		while ( next < 2){
@@ -39,19 +42,17 @@ class EventSet {
 				break;
 			}
 			if(verificaPerdeu(events[next].alvo)){
-				System.out.println("O treinador "+events[next].alvo.nome+" não tem mais pokemons vivos, portanto foi derrotado!");
-				System.out.println("O treinador "+events[next].ator.nome+" é o vencedor!!!");
+				System.out.print("O treinador "+events[next].alvo.nome+" não tem mais pokemons vivos, portanto foi derrotado!");
+				System.out.println(" O treinador "+events[next].ator.nome+" é o vencedor!!!");
 				break;
 			}
 			if(verificaPerdeu(events[next].ator)){
-				System.out.println("O treinador "+events[next].ator.nome+" não tem mais pokemons vivos, portanto foi derrotado!");
-				System.out.println("O treinador "+events[next].alvo.nome+" é o vencedor!!!");
+				System.out.print("O treinador "+events[next].ator.nome+" não tem mais pokemons vivos, portanto foi derrotado!");
+				System.out.println(" O treinador "+events[next].alvo.nome+" é o vencedor!!!");
 				break;
 			}
 			next++;
 		}
-		System.out.println(a.p[0].nome + "    HP: "+a.p[0].hp);
-		System.out.println(b.p[1].nome + "    HP: "+b.p[1].hp);
 		next = 0;
 		index = 0;
 	}

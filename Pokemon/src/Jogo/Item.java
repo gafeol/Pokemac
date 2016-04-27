@@ -11,7 +11,7 @@ public class Item extends Evento{
 		alvo = b;
 		this.tipo = tipo;
 		prioridade = 1;
-	}
+	}	
 	
 	public void executar (){
 		if ( tipo == 1 ){
@@ -19,7 +19,7 @@ public class Item extends Evento{
 		}
 		if ( tipo == 2 ){
 			if ( ator.p[0].hp+20 > ator.p[0].hpMax ){
-				System.out.println("O pokémon "+ator.p[0].nome+" recuperou "+(ator.p[0].hpMax - ator.p[0].hp)+" pontos de vida."  );
+				System.out.println("O pokémon "+ator.p[0].nome+" recuperou "+(ator.p[0].hpMax - ator.p[0].hp)+" pontos de vida"  );
 				ator.p[0].hp = ator.p[0].hpMax;	
 			}
 			else {
