@@ -14,7 +14,7 @@ class Trocar extends Evento{
 		if(t.p[indice_pok].hp <= 0){
 			System.out.println("Este Pokemon está morto, escolha outro...");
 		}
-		System.out.println("O treinador "+t.nome+"trocou seu pokemon "+t.p[0].nome+" pelo pokemon "+t.p[indice_pok].nome);
+		System.out.println("O treinador "+t.nome+" trocou seu pokemon "+t.p[0].nome+" pelo pokemon "+t.p[indice_pok].nome);
 		paux = t.p[0];
 		t.p[0] = t.p[indice_pok];
 		t.p[indice_pok] = paux;	

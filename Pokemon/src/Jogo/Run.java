@@ -2,13 +2,15 @@ package Jogo;
 
 public class Run extends Evento {
 	
-	public Run (){
+	public Run (Treinador a, Treinador b){
+		ator = a;
+		alvo = b;
 		prioridade = 0;
 	}
 	
-	public void executa ( Treinador a, Treinador b ){
+	public void executar (){
 		
-		System.out.println( "O treinador " + a.nome + "fugiu. O treinador " + b.nome + "é o vencedor!" );
+		System.out.println( "O treinador " + ator.nome + " fugiu. O treinador " + alvo.nome + " é o vencedor!" );
 	}
 
 }

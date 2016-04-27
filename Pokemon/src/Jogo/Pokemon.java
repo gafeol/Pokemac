@@ -5,19 +5,15 @@ public class Pokemon {
 	int hp;
 	int hpMax;
 	String tipo;
-	Ataque a1;
-	Ataque a2;
-	Ataque a3;
-	Ataque a4;
+	Ataque[] atk = new Ataque[10];
 	
-	public Pokemon ( String nome, int hp, String tipo, Ataque a1, Ataque a2, Ataque a3, Ataque a4 ){
+	public Pokemon ( String nome, int hp, String tipo, Ataque[] a){
 		this.nome = nome;
 		this.hp = hp;
 		hpMax = hp;
 		this.tipo = tipo;
-		this.a1 = a1;
-		this.a2 = a2;
-		this.a3 = a3;
-		this.a4 = a4;
+		for(int i=0;i<4;i++){
+			atk[i] = a[i];
+		}
 	}
 }
