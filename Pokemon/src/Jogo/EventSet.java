@@ -37,6 +37,10 @@ class EventSet {
 		ordenaEvento();
 		
 		while ( next < 2){
+			if(events[next] == null){
+				next++;
+				continue;
+			}
 			events[next].executar();
 			if(events[next].prioridade == 0){
 				break;

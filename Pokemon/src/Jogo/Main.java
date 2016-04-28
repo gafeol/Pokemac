@@ -116,7 +116,7 @@ public class Main{
 		
 		//cria mapa
 		criaMapa();
-		anda(ash, 0, 0, m);
+		PokeSet.anda(ash, 0, 0, m);
 		//Evento fugir1 = new Run(ash, gary);
 		//EventSet.executa_rodada(ataque1, fugir1);
 		
