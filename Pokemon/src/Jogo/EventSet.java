@@ -42,13 +42,13 @@ class EventSet {
 				break;
 			}
 			if(verificaPerdeu(events[next].alvo)){
-				System.out.print("O treinador "+events[next].alvo.nome+" n�o tem mais pokemons vivos, portanto foi derrotado!");
-				System.out.println(" O treinador "+events[next].ator.nome+" � o vencedor!!!");
+				System.out.print("O treinador "+events[next].alvo.nome+" não tem mais pokemons vivos, portanto foi derrotado!");
+				System.out.println(" O treinador "+events[next].ator.nome+" é o vencedor!!!");
 				break;
 			}
 			if(verificaPerdeu(events[next].ator)){
-				System.out.print("O treinador "+events[next].ator.nome+" n�o tem mais pokemons vivos, portanto foi derrotado!");
-				System.out.println(" O treinador "+events[next].alvo.nome+" � o vencedor!!!");
+				System.out.print("O treinador "+events[next].ator.nome+" não tem mais pokemons vivos, portanto foi derrotado!");
+				System.out.println(" O treinador "+events[next].alvo.nome+" é o vencedor!!!");
 				break;
 			}
 			if(events[next].alvo.p[0].hp == 0){
@@ -61,7 +61,7 @@ class EventSet {
 		index = 0;
 	}
 
-	private static boolean verificaPerdeu(Treinador t) {
+	public static boolean verificaPerdeu(Treinador t) {
 		if(t == null)
 			return false;
 		for(int indice_p = 0; indice_p < 6; indice_p++){

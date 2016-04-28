@@ -1,6 +1,16 @@
 package Jogo;
 
 public class Main{
+	static char m[][] = new char[50][50];
+	
+	public static void criaMapa(){
+		for(int a=0;a<10;a++){
+			for(int b=0;b<10;b++){
+				m[a][b] = 'G';
+			}
+		}
+	}
+	
 	public static void main (String[] args){
 		Ataque a1 = new Ataque("Tackle", 21, 1);
 		Ataque a2 = new Ataque("Harden", 32, 2);
@@ -104,6 +114,9 @@ public class Main{
 		Evento ataque16 = new Atacar(sussu, garcia, 2);
 		EventSet.executa_rodada(ataque15, ataque16);
 		
+		//cria mapa
+		criaMapa();
+		anda(ash, 0, 0, m);
 		//Evento fugir1 = new Run(ash, gary);
 		//EventSet.executa_rodada(ataque1, fugir1);
 		

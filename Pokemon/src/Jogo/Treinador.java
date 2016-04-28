@@ -7,6 +7,9 @@ public class Treinador {
 	
 	public Treinador ( String nome, Pokemon[] p, int npoke){
 		this.nome = nome;
+		for(int a=0;a<6;a++){
+			this.p[a] = null;
+		}
 		for(int a=0;a<npoke;a++){
 			this.p[a] = p[a];
 		}
