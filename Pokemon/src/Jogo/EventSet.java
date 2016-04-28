@@ -41,14 +41,18 @@ class EventSet {
 			if(events[next].prioridade == 0){
 				break;
 			}
+			if(events[next].alvo.p[0].hp == 0){
+				//Se o pokemon do oponente acabou de morrer, nao executo um ataque do pokemon morto
+				break;
+			}
 			if(verificaPerdeu(events[next].alvo)){
-				System.out.print("O treinador "+events[next].alvo.nome+" não tem mais pokemons vivos, portanto foi derrotado!");
-				System.out.println(" O treinador "+events[next].ator.nome+" é o vencedor!!!");
+				System.out.print("O treinador "+events[next].alvo.nome+" nï¿½o tem mais pokemons vivos, portanto foi derrotado!");
+				System.out.println(" O treinador "+events[next].ator.nome+" ï¿½ o vencedor!!!");
 				break;
 			}
 			if(verificaPerdeu(events[next].ator)){
-				System.out.print("O treinador "+events[next].ator.nome+" não tem mais pokemons vivos, portanto foi derrotado!");
-				System.out.println(" O treinador "+events[next].alvo.nome+" é o vencedor!!!");
+				System.out.print("O treinador "+events[next].ator.nome+" nï¿½o tem mais pokemons vivos, portanto foi derrotado!");
+				System.out.println(" O treinador "+events[next].alvo.nome+" ï¿½ o vencedor!!!");
 				break;
 			}
 			next++;

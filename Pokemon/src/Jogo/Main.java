@@ -34,8 +34,8 @@ public class Main{
 		Pokemon[] c = {c1, c2, c3, c4, c5, c6};
 		Pokemon[] b = {b1, b2, b3, b4, b5, b6};
 		
-		Treinador ash = new Treinador("ash", c, 6);
-		Treinador gary = new Treinador("gai", b, 6);
+		Treinador ash = new Treinador("Ash", c, 6);
+		Treinador gary = new Treinador("Gary", b, 6);
 			
 		Evento ataque1 = new Atacar(ash, gary, 1);
 		Evento ataque2 = new Atacar(gary, ash, 2);
@@ -60,7 +60,7 @@ public class Main{
 		
 		Evento ataque7 = new Atacar(ash,gary,2);
 		Evento troca3 = new Trocar(gary, ash, 2);
-		EventSet.executa_rodada(ataque7, troca3);
+		EventSet.executa_rodada(ataque7	, troca3);
 		
 		Evento ataque8 = new Atacar(ash,gary,2);
 		Evento troca4 = new Trocar(gary, ash, 1);
@@ -70,8 +70,19 @@ public class Main{
 		Evento ataque10 = new Atacar(gary,ash,3);
 		EventSet.executa_rodada(ataque9, ataque10);
 		
+		Evento troca5 = new Trocar(ash, gary, 1);
+		Evento ataque11 = new Atacar(gary, ash, 4);
+		EventSet.executa_rodada(troca5, ataque11);		
+
+		Evento troca6 = new Trocar(ash, gary, 2);
+		Evento item3 = new Item(gary, ash, 1);
+		EventSet.executa_rodada(troca6, item3);	
 		
-		
+		//Mesmo que o Articuno tenha sido ordenado para usar o ataque 3, ele não executa tal ação 
+		// pois morre com o ataque de seu oponente antes de consguir atacar
+		Evento ataque12 = new Atacar(ash, gary, 4);
+		Evento ataque13 = new Atacar(gary, ash, 3);
+		EventSet.executa_rodada(ataque12, ataque13);
 		/*
 		EventSet.executa_rodada(ataqueAsh4, troca4);
 		
