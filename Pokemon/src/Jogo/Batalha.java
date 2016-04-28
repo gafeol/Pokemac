@@ -1,17 +1,47 @@
 package Jogo;
+import java.util.Random;
 
 public class Batalha {
 	public static void batalhaWild(Treinador t, Pokemon w){
+		Random rand;
+		
+		System.out.println("O pokemon selvagem "+w.nome+" apareceu!");
+		Pokemon[] v = {w, null, null, null, null, null};
+		Treinador wild = new Treinador("Wild Pokemon", v, 1);
+		
 		boolean capturado = false;
-		while(!EventSet.verificaPerdeu(t) && w.hp>0 && !capturado){
+		
+		while(!EventSet.verificaPerdeu(t) && !EventSet.verificaPerdeu(wild) && !capturado){
 			//se o treinador n perdeu, o pokemon selvagem nao morreu nem foi ccapturado, continua a batalha
-			if(w.hp<10){
-				//joga pokebola
+			int randomAw = rand.nextInt(4);
+			Evento aw = new Atacar(wild, t, randomAw);
+			Evento at;
+			if(t.p[0].hp <= 0){
+				for(int a=0;a<4;a++){
+					if(t.p[a].hp > 0){
+						at = new Trocar(t, wild, a);
+						break;
+					}
+				}
 				
 			}
-			else{
-				Ataque aw1 = new Atacar()
+			if(wild.p[0].hp < wild.p[0].hpMax/3){
+				//joga pokebola
+				at = new Item(t, wild, 1);
+				if(Item.capturou() == true){
+					System.out.println("O treinador "+t.nome+" jogou uma pokebola!!");
+					System.out.println("E conseguiu capturar o pokemon "+wild.p[0].nome+"!!!");
+					System.out.println(wild.p[0].nome+" foi direcionado para o PC");
+					capturado = true;
+				}
 			}
+			else{
+				int randomAt = rand.nextInt(4);
+				Evento at = new Atacar(t, wild, randomAt);
+				EventSet.executa_rodada(at, aw);
+			}
+			if(!capturado) 
+				EventSet.executa_rodada(at, aw);
 		}
 	}
 }

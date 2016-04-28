@@ -1,12 +1,20 @@
 package Jogo;
 import java.util.Random;
 
+import java.util.Random;
+
 public class Item extends Evento{
 	private static Random rand;
 	private static int prob = 0;
 	private int tipo;
 	// Item do tipo 1 = pokeball
 	// Item do tipo 2 = potion
+	public static int randInt(int min, int max) {
+	    Random rand = new Random();
+	    int randomNum = rand.nextInt((max - min) + 1) + min;
+
+	    return randomNum;
+	}
 	
 	public Item (Treinador a, Treinador b, int tipo){
 		ator = a;
@@ -25,7 +33,8 @@ public class Item extends Evento{
 	public void executar (){
 		// 1 = POKEBALL
 		if ( tipo == 1 ){
-			
+			System.out.println("O treinador "+ator.nome+" jogou uma pokebola!!");
+			System.out.println("Porém não conseguiu capturar o pokemon "+alvo.p[0].nome+"...");
 		}
 		
 		// 2 = POTION
