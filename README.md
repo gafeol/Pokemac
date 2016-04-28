@@ -1,3 +1,2 @@
 # Pokemac
-filho da puta
 
