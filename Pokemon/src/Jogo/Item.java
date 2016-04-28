@@ -1,20 +1,12 @@
 package Jogo;
 import java.util.Random;
 
-import java.util.Random;
-
 public class Item extends Evento{
-	private static Random rand;
+	private static Random rand = new Random();
 	private static int prob = 0;
 	private int tipo;
 	// Item do tipo 1 = pokeball
 	// Item do tipo 2 = potion
-	public static int randInt(int min, int max) {
-	    Random rand = new Random();
-	    int randomNum = rand.nextInt((max - min) + 1) + min;
-
-	    return randomNum;
-	}
 	
 	public Item (Treinador a, Treinador b, int tipo){
 		ator = a;
@@ -40,11 +32,11 @@ public class Item extends Evento{
 		// 2 = POTION
 		if ( tipo == 2 ){
 			if ( ator.p[0].hp+20 > ator.p[0].hpMax ){
-				System.out.println("O pok�mon "+ator.p[0].nome+" recuperou "+(ator.p[0].hpMax - ator.p[0].hp)+" pontos de vida"  );
+				System.out.println("O pokémon "+ator.p[0].nome+" recuperou "+(ator.p[0].hpMax - ator.p[0].hp)+" pontos de vida"  );
 				ator.p[0].hp = ator.p[0].hpMax;	
 			}
 			else {
-				System.out.println("O pok�mon "+ator.p[0].nome+" recuperou 20 pontos de vida" );
+				System.out.println("O pokémon "+ator.p[0].nome+" recuperou 20 pontos de vida" );
 				ator.p[0].hp += 20;
 			}
 		}

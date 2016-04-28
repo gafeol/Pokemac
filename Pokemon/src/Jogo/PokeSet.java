@@ -3,27 +3,22 @@ package Jogo;
 import java.util.Random;
 
 public class PokeSet {
+	static Random rand = new Random();
 	static int npok = 0;
 	static Pokemon[] lista_pok = new Pokemon[100];
 	static int vi[] = {0, 0, -1, 1};
 	static int vj[] = {1, -1, 0, 0};
+	
 	static void add(Pokemon[] p, int np){
 		for(int a=0;a<np;a++){
 			lista_pok[npok++] = p[a];
 		}
 	}
 	
-	public static int randInt(int min, int max) {
-	    Random rand = new Random();
-	    int randomNum = rand.nextInt((max - min) + 1) + min;
-
-	    return randomNum;
-	}
-	
 	public static Pokemon findWild(int i, int j, char[][] m){
 		int indWild = npok*2;
 		if(m[i][j] == 'G')
-			indWild = randInt(0, npok*2);
+			indWild = rand.nextInt(npok*4);
 		//50% chance de encontrar pokemon se estiver na grama
 		if(indWild >= npok)
 			return null;
@@ -63,6 +58,13 @@ public class PokeSet {
 			wild = findWild(i, j, m);
 		}
 		System.out.println("Um pokemon selvagem foi encontrado!");
+		regenera_pokSelva();
 		Batalha.batalhaWild(t, wild);
+	}
+
+	public static void regenera_pokSelva() {
+		for(int a=0;a<npok;a++){
+			lista_pok[a].hp = lista_pok[a].hpMax;
+		}
 	}
 }

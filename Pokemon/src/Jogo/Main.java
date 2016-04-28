@@ -85,7 +85,7 @@ public class Main{
 		EventSet.executa_rodada(troca5, ataque11);		
 
 		Evento troca6 = new Trocar(ash, gary, 2);
-		Evento item3 = new Item(gary, ash, 1);
+		Evento item3 = new Item(gary, ash, 2);
 		EventSet.executa_rodada(troca6, item3);	
 		
 		//Mesmo que o Articuno tenha sido ordenado para usar o ataque 3, ele não executa tal ação 
@@ -114,6 +114,23 @@ public class Main{
 		Evento ataque16 = new Atacar(sussu, garcia, 2);
 		EventSet.executa_rodada(ataque15, ataque16);
 		
+		
+		Pokemon s1 = new Pokemon("Bulbasaur", 50, "Grama", atk1);
+		Pokemon s2 = new Pokemon("Squirtle", 32, "Agua", atk3);
+		Pokemon s3 = new Pokemon("Charmander", 41, "Fogo", atk2);
+		Pokemon s4 = new Pokemon("Pidgey", 20, "Fogo", atk1);
+		Pokemon s5 = new Pokemon("Magikarp", 100, "Agua", atk4);
+		Pokemon s6 = new Pokemon("Caterpie", 90, "Grama", atk3);
+
+		Pokemon d1 = new Pokemon("Moltres", 50, "Fogo", atk3);
+		Pokemon d2 = new Pokemon("Articuno", 69, "Agua", atk1);
+		Pokemon d3 = new Pokemon("Zapdos", 2, "Grama", atk4);
+		Pokemon d4 = new Pokemon("Mewtwo", 30, "Fogo", atk4);
+		Pokemon d5 = new Pokemon("Mew", 14, "Grama", atk1);
+		Pokemon d6 = new Pokemon("Metapod", 200, "Grama", atk2);
+		
+		Pokemon[] selvagens = {s1, s2, s3, s4, s5, s6, d1, d2, d3, d4, d5, d6};
+		PokeSet.add(selvagens, 12);
 		//cria mapa
 		criaMapa();
 		PokeSet.anda(ash, 0, 0, m);

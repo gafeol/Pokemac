@@ -31,9 +31,9 @@ class EventSet {
 	static public void executa_rodada (Evento e1, Evento e2 ){
 		add(e1);
 		add(e2);
-		System.out.println();
 		System.out.println( e1.ator.p[0].nome + "    HP: "+e1.ator.p[0].hp);
 		System.out.println( e2.ator.p[0].nome + "    HP: "+e2.ator.p[0].hp);
+		System.out.println();
 		ordenaEvento();
 		
 		while ( next < 2){
