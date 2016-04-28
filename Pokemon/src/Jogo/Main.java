@@ -9,6 +9,22 @@ public class Main{
 				m[a][b] = 'G';
 			}
 		}
+		m[0][0] = 'E';
+		m[0][1] = 'E';
+		m[0][2] = 'E';
+		m[1][2] = 'E';
+		m[2][2] = 'E';
+		m[3][2] = 'E';
+		m[3][3] = 'E';
+		m[4][3] = 'E';
+		m[5][2] = 'E';
+		m[7][9] = 'E';
+		m[8][9] = 'E';
+		m[7][3] = 'E';
+		m[2][7] = 'E';
+		m[2][8] = 'E';
+		
+		
 	}
 	
 	public static void main (String[] args){
@@ -133,7 +149,12 @@ public class Main{
 		PokeSet.add(selvagens, 12);
 		//cria mapa
 		criaMapa();
+		//Os pokemons de ash continuam com a vida de depois de sua batalha com gary
+		//E significa estrada no mapa, nao aparecem pokemons ai
+		//G significa grama
+		//T é o próprio treinador ash
 		PokeSet.anda(ash, 0, 0, m);
+		
 		//Evento fugir1 = new Run(ash, gary);
 		//EventSet.executa_rodada(ataque1, fugir1);
 		
