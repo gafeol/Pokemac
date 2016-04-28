@@ -83,14 +83,26 @@ public class Main{
 		Evento ataque12 = new Atacar(ash, gary, 4);
 		Evento ataque13 = new Atacar(gary, ash, 3);
 		EventSet.executa_rodada(ataque12, ataque13);
-		/*
-		EventSet.executa_rodada(ataqueAsh4, troca4);
 		
-		EventSet.executa_rodada(item1,item2);
+		// Ash foge da batalha, portanto Gary ganhou
+		Evento fuga = new Run(ash, gary);
+		Evento ataque14 = new Atacar(gary, ash, 1);
+		EventSet.executa_rodada(fuga, ataque14);
 		
-		EventSet.executa_rodada(ataqueAsh4, troca4);
-		*/
 		
+		//Segue um caso em que não sobram pokemons vivos de um treinador
+		Pokemon pichu = new Pokemon("Pichu", 15, "Agua", atk1);
+		Pokemon dig = new Pokemon("Digglet", 17, "Fogo", atk3);
+		
+		Pokemon[] g = {pichu, null, null, null, null, null};
+		Pokemon[] s = {dig, null, null, null, null, null};
+		
+		Treinador garcia = new Treinador("Garcia", g, 1);
+		Treinador sussu = new Treinador("Sussu", s, 1);
+		
+		Evento ataque15 = new Atacar(garcia, sussu, 1);
+		Evento ataque16 = new Atacar(sussu, garcia, 2);
+		EventSet.executa_rodada(ataque15, ataque16);
 		
 		//Evento fugir1 = new Run(ash, gary);
 		//EventSet.executa_rodada(ataque1, fugir1);
